@@ -44,7 +44,7 @@ variables:
 #     allowPartiallySucceededBuilds: 
 
 stages:
-- stage: Nuget Installation
+- stage: 'Nuget Installation'
   jobs:
   - job:
     displayName: 'Nuget tool installation'
@@ -58,7 +58,7 @@ stages:
       inputs:
         restoreSolution: '$(solution)'
 
-- stage: VS Build
+- stage: 'VS Build'
   jobs:
   - job:
     displayName: 'Building using VS Build'
@@ -70,7 +70,7 @@ stages:
         platform: '$(buildPlatform)'
         configuration: '$(buildConfiguration)'
 
-- stage: Building Archive
+- stage: 'Building Archive'
   jobs:
   - job: 
     displayName: 'Building archive'
@@ -83,7 +83,7 @@ stages:
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
         replaceExistingArchive: true
 
-- stage: Downloading Artifact
+- stage: 'Downloading Artifact'
   jobs:
   - job: 
     displayName: 'Downloading Artifacts'
