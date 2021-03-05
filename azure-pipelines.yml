@@ -90,6 +90,7 @@ stages:
     steps:
     - task: DownloadBuildArtifacts@0
       inputs:
+        artifactName: $(Build.BuildName)
         buildType: 'current'
         downloadType: 'single'
         downloadPath: '$(System.ArtifactsDirectory)'
